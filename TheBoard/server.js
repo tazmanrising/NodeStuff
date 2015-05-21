@@ -16,6 +16,10 @@ var express = require("express");
 var app = express();
 
 
+// Setup the View Engine
+app.set("view engine", "jade");
+
+
 //create a web server  and a callback function
 // request and response variable
 //var server = http.createServer(function (req, res) {
@@ -29,7 +33,11 @@ var app = express();
 //request and response objects  
 app.get("/", function (req, res) {
     //magic strings this would be painful 
-    res.send("<html><body<h1>express</h1></body></html");
+    //res.send("<html><body<h1>express</h1></body></html");
+    //with jade view engine installed , do not need magic string above
+
+    res.render("jade/index", { title: "Express + Jade" });
+
 });
 
 
