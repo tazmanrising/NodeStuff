@@ -36,7 +36,7 @@ app.get("/", function (req, res) {
     //res.send("<html><body<h1>express</h1></body></html");
     //with jade view engine installed , do not need magic string above
 
-    res.render("jade/index", { title: "Express + Jade" });
+    res.render("jade/index", { titles: "Express + Jade" });
 
 });
 
