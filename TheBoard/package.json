@@ -1,0 +1,15 @@
+{
+  "name": "TheBoard",
+  "version": "0.1.0",
+  "description": "Message Board sticky notes",
+  "main": "server.js",
+  "author": {
+    "name": "Tom Stickel",
+    "email": "tom.stickel@srpnet.com"
+  },
+  "dependencies": {
+    "express": "^4.12.3",
+    "jade": "^1.9.2",
+    "underscore": "^1.8.3"
+  }
+}
