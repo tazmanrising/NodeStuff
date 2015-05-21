@@ -15,9 +15,18 @@ var express = require("express");
 //create a singleton   and executing it like a function
 var app = express();
 
+//var ejsEngine = require("ejs-locals");
+
+
 
 // Setup the View Engine
-app.set("view engine", "jade");
+//app.set("view engine", "jade");
+
+//app.engine("ejs", ejsEngine); // support master pages
+//app.set("view engine", "ejs"); // ejs view engine
+
+app.set("view engine", "vash");
+
 
 
 //create a web server  and a callback function
@@ -36,7 +45,9 @@ app.get("/", function (req, res) {
     //res.send("<html><body<h1>express</h1></body></html");
     //with jade view engine installed , do not need magic string above
 
-    res.render("jade/index", { titles: "Express + Jade" });
+    //res.render("jade/index", { titles: "Express + Jade" });
+    //res.render("ejs/index", { title: "Express + EJS" });
+    res.render("index", { title: "Express + Vash" });
 
 });
 
