@@ -15,6 +15,7 @@ var express = require("express");
 //create a singleton   and executing it like a function
 var app = express();
 
+var controllers = require("./controllers");
 //var ejsEngine = require("ejs-locals");
 
 
@@ -28,6 +29,11 @@ var app = express();
 app.set("view engine", "vash");
 
 
+// set the public static resource folder
+app.use(express.static(__dirname + "/public"));
+
+// Map the routes
+controllers.init(app);
 
 //create a web server  and a callback function
 // request and response variable
@@ -40,16 +46,16 @@ app.set("view engine", "vash");
 
 // app object responds to http verbs  using methods   what is url  , root,  callback  supplies us with 
 //request and response objects  
-app.get("/", function (req, res) {
-    //magic strings this would be painful 
-    //res.send("<html><body<h1>express</h1></body></html");
-    //with jade view engine installed , do not need magic string above
+//app.get("/", function (req, res) {
+//    //magic strings this would be painful 
+//    //res.send("<html><body<h1>express</h1></body></html");
+//    //with jade view engine installed , do not need magic string above
 
-    //res.render("jade/index", { titles: "Express + Jade" });
-    //res.render("ejs/index", { title: "Express + EJS" });
-    res.render("index", { title: "Express + Vash" });
+//    //res.render("jade/index", { titles: "Express + Jade" });
+//    //res.render("ejs/index", { title: "Express + EJS" });
+//    res.render("index", { title: "Express + Vash" });
 
-});
+//});
 
 
 app.get("/api/users", function (req, res) {
